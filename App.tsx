@@ -138,7 +138,7 @@ const Hero: React.FC<{ onTrackClick: () => void; onQuoteClick: () => void }> = (
             <span className="text-[10px] font-black text-orange-500 uppercase tracking-[0.3em]">Global Network Active • 2025</span>
           </div>
           
-          <h1 className="text-6xl md:text-[5.5rem] font-brand font-black text-white leading-[0.9] mb-8 tracking-tighter">
+          <h1 className="text-4xl md:text-6xl lg:text-[5.5rem] font-brand font-black text-white leading-[1.1] md:leading-[0.9] mb-8 tracking-tighter">
             NAVIGATING <span className="text-gradient">GLOBAL</span> <br/>
             COMMERCE <span className="text-orange-500 italic">SMART.</span>
           </h1>
@@ -358,9 +358,9 @@ const Footer: React.FC = () => (
         </div>
       </div>
       
-      <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6 text-slate-600 text-[10px] font-black uppercase tracking-[0.4em]">
+      <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6 text-slate-600 text-[8px] sm:text-[10px] font-black uppercase tracking-[0.2em] sm:tracking-[0.4em] text-center">
         <p>© 2025 BRIGHT G-7 LTD. PRECISION IN MOTION.</p>
-        <div className="flex gap-8">
+        <div className="flex flex-wrap justify-center gap-4 sm:gap-8">
             <a href="#" className="hover:text-white transition-colors">Privacy Infrastructure</a>
             <a href="#" className="hover:text-white transition-colors">Anti-Bribery</a>
             <a href="#" className="hover:text-white transition-colors">Sitemap</a>

@@ -122,16 +122,17 @@ const WorldMap: React.FC<WorldMapProps> = ({ origin, destination, current }) => 
   }, [origin, destination, current]);
 
   return (
-    <div className="bg-slate-950 rounded-3xl p-1 overflow-hidden border border-slate-800 shadow-2xl relative w-full aspect-video flex items-center justify-center">
+    <div className="bg-slate-950 rounded-3xl p-1 overflow-hidden border border-slate-800 shadow-2xl relative w-full aspect-[4/3] sm:aspect-video flex items-center justify-center">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-blue-900/10 via-transparent to-transparent pointer-events-none"></div>
       <svg
         ref={svgRef}
         viewBox="0 0 800 450"
         className="w-full h-full relative z-10"
+        preserveAspectRatio="xMidYMid meet"
       />
-      <div className="absolute top-6 left-6 bg-slate-900/80 backdrop-blur-md px-3 py-1.5 rounded-full border border-slate-700 flex items-center gap-4 text-[10px] font-bold tracking-widest text-slate-400">
-        <div className="flex items-center gap-1.5"><span className="w-2 h-2 rounded-full bg-orange-500"></span> ORIGIN</div>
-        <div className="flex items-center gap-1.5"><span className="w-2 h-2 rounded-full bg-blue-500"></span> DESTINATION</div>
+      <div className="absolute top-4 left-4 sm:top-6 sm:left-6 bg-slate-900/80 backdrop-blur-md px-2 py-1 sm:px-3 sm:py-1.5 rounded-full border border-slate-700 flex items-center gap-2 sm:gap-4 text-[8px] sm:text-[10px] font-bold tracking-widest text-slate-400">
+        <div className="flex items-center gap-1.5"><span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-orange-500"></span> ORIGIN</div>
+        <div className="flex items-center gap-1.5"><span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-blue-500"></span> DESTINATION</div>
       </div>
     </div>
   );

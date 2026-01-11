@@ -140,11 +140,11 @@ const TrackingSection: React.FC = () => {
                     className="absolute top-4 left-0 h-1 bg-orange-500 rounded-full transition-all duration-1000 ease-out"
                     style={{ width: `${(currentStageIndex / (stages.length - 1)) * 100}%` }}
                   ></div>
-                  <div className="flex justify-between relative">
+                <div className="flex flex-wrap justify-between relative gap-y-8">
                     {stages.map((stage, idx) => (
-                      <div key={stage} className="flex flex-col items-center">
+                      <div key={stage} className="flex flex-col items-center w-1/3 sm:w-auto">
                         <div className={`w-4 h-4 rounded-full border-4 border-white shadow-md z-10 transition-colors duration-500 ${idx <= currentStageIndex ? 'bg-orange-500' : 'bg-slate-200'}`} />
-                        <p className={`mt-6 text-[9px] font-black uppercase tracking-tighter text-center w-20 leading-tight ${idx <= currentStageIndex ? 'text-slate-900' : 'text-slate-400'}`}>
+                        <p className={`mt-4 text-[9px] font-black uppercase tracking-tighter text-center w-20 leading-tight ${idx <= currentStageIndex ? 'text-slate-900' : 'text-slate-400'}`}>
                           {stage}
                         </p>
                       </div>

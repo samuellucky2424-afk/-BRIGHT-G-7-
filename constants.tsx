@@ -16,24 +16,24 @@ export const SERVICES: ServiceItem[] = [
     id: 'air',
     title: 'Air Cargo Logistics',
     description: 'Fast and reliable air freight solutions for time-sensitive international shipments.',
-    icon: '✈️'
+    icon: '/attached_assets/stock_images/air_freight_cargo_pl_8f072cf1.jpg'
   },
   {
     id: 'sea',
     title: 'Sea Freight',
     description: 'Cost-effective container shipping and ocean freight services for bulk cargo worldwide.',
-    icon: '🚢'
+    icon: '/attached_assets/stock_images/modern_cargo_ship_oc_46867224.jpg'
   },
   {
     id: 'land',
     title: 'Land Transportation',
     description: 'Door-to-door trucking and last-mile delivery services across continents.',
-    icon: '🚛'
+    icon: '/attached_assets/stock_images/modern_truck_logisti_66ecea9f.jpg'
   },
   {
     id: 'cross',
     title: 'Cross-Border Shipping',
     description: 'Seamless customs clearance and documentation for international trade lanes.',
-    icon: '🌍'
+    icon: '/attached_assets/stock_images/container_ship_at_po_df22b7c3.jpg'
   }
 ];

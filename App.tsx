@@ -206,14 +206,18 @@ const Contact: React.FC = () => {
             <p className="text-slate-400 text-lg mb-12 max-w-md">Our global response team is available 24/7 to handle urgent cargo inquiries and strategic planning.</p>
             <div className="space-y-6">
               <div className="flex items-center gap-4 group cursor-pointer">
-                <div className="w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center text-orange-500 group-hover:bg-orange-500 group-hover:text-white transition-all">📞</div>
+                <div className="w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center text-orange-500 group-hover:bg-orange-500 group-hover:text-white transition-all">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                </div>
                 <div>
                   <p className="text-[10px] font-black text-slate-500 uppercase tracking-widest">Global Support</p>
                   <p className="font-bold">+971 4 123 4567</p>
                 </div>
               </div>
               <div className="flex items-center gap-4 group cursor-pointer">
-                <div className="w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center text-orange-500 group-hover:bg-orange-500 group-hover:text-white transition-all">✉️</div>
+                <div className="w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center text-orange-500 group-hover:bg-orange-500 group-hover:text-white transition-all">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+                </div>
                 <div>
                   <p className="text-[10px] font-black text-slate-500 uppercase tracking-widest">General Inquiries</p>
                   <p className="font-bold">desk@bright-g7.com</p>
@@ -267,8 +271,10 @@ const Services: React.FC = () => (
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         {SERVICES.map((service, idx) => (
-          <div key={service.id} className="group relative bg-slate-50 p-10 rounded-[3rem] border border-slate-100 hover-lift hover:bg-slate-950 transition-all duration-700">
-            <div className="text-5xl mb-10 transform transition-transform group-hover:scale-110 group-hover:-rotate-6 duration-700">{service.icon}</div>
+          <div key={service.id} className="group relative bg-slate-50 p-6 rounded-[3rem] border border-slate-100 hover-lift hover:bg-slate-950 transition-all duration-700 overflow-hidden">
+            <div className="h-48 mb-8 overflow-hidden rounded-[2rem]">
+              <img src={service.icon} alt={service.title} className="w-full h-full object-cover transform transition-transform group-hover:scale-110 duration-700" />
+            </div>
             <h3 className="text-2xl font-black text-slate-950 group-hover:text-white mb-4 transition-colors tracking-tight">{service.title}</h3>
             <p className="text-slate-500 group-hover:text-slate-400 leading-relaxed text-sm mb-8 transition-colors">{service.description}</p>
             <div className="w-12 h-1 bg-orange-500 rounded-full group-hover:w-full transition-all duration-700"></div>
@@ -335,15 +341,20 @@ const Footer: React.FC = () => (
         </div>
         <div>
             <h4 className="text-white font-black mb-8 uppercase tracking-[0.3em] text-[10px]">Official Comms</h4>
-            <div className="flex gap-4">
-                {[1,2,3,4].map(i => (
-                    <div key={i} className="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center hover:bg-orange-500 hover:text-white text-slate-400 transition-all cursor-pointer group">
+                <div className="flex gap-4">
+                  {[
+                    { icon: 'LinkedIn', symbol: '🔗' },
+                    { icon: 'Twitter', symbol: '𝕏' },
+                    { icon: 'Instagram', symbol: '📸' },
+                    { icon: 'Phone', symbol: '📞' }
+                  ].map((item, i) => (
+                    <div key={i} className="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center hover:bg-orange-500 hover:text-white text-slate-400 transition-all cursor-pointer group" title={item.icon}>
                         <span className="group-hover:scale-110 transition-transform text-xl">
-                          {i === 1 ? '🔗' : i === 2 ? '𝕏' : i === 3 ? '📸' : '📞'}
+                          {item.symbol}
                         </span>
                     </div>
-                ))}
-            </div>
+                  ))}
+                </div>
         </div>
       </div>
       

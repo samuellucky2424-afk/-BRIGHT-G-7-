@@ -19,10 +19,10 @@ const QuoteModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isOpen
   };
 
   return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center px-4">
+    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
       <div className="absolute inset-0 bg-slate-950/80 backdrop-blur-sm" onClick={onClose}></div>
-      <div className="relative bg-white w-full max-w-xl rounded-[2.5rem] overflow-hidden shadow-2xl animate-in zoom-in-95 duration-300">
-        <div className="bg-slate-950 p-8 text-white flex justify-between items-center">
+      <div className="relative bg-white w-full max-w-xl rounded-[2rem] sm:rounded-[2.5rem] overflow-hidden shadow-2xl animate-in zoom-in-95 duration-300">
+        <div className="bg-slate-950 p-6 sm:p-8 text-white flex justify-between items-center">
           <div>
             <h3 className="text-2xl font-brand font-black">Request a Quote</h3>
             <p className="text-slate-400 text-xs font-bold uppercase tracking-widest mt-1">Direct Logistics Procurement</p>
@@ -30,29 +30,29 @@ const QuoteModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isOpen
           <button onClick={onClose} className="text-slate-500 hover:text-white transition-colors text-2xl">✕</button>
         </div>
         
-        <div className="p-8">
+        <div className="p-6 sm:p-8">
           {submitted ? (
-            <div className="text-center py-12">
-              <div className="w-20 h-20 bg-green-100 text-green-600 rounded-full flex items-center justify-center text-4xl mx-auto mb-6">✓</div>
-              <h4 className="text-2xl font-brand font-black text-slate-950">Inquiry Received</h4>
-              <p className="text-slate-500 font-medium mt-2">A logistics analyst will contact you within 2 business hours.</p>
+            <div className="text-center py-8 sm:py-12">
+              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-green-100 text-green-600 rounded-full flex items-center justify-center text-3xl sm:text-4xl mx-auto mb-6">✓</div>
+              <h4 className="text-xl sm:text-2xl font-brand font-black text-slate-950">Inquiry Received</h4>
+              <p className="text-slate-500 font-medium mt-2 text-sm sm:text-base">A logistics analyst will contact you within 2 business hours.</p>
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-4">
-              <div className="grid grid-cols-2 gap-4">
-                <input required type="text" placeholder="First Name" className="w-full bg-slate-50 border border-slate-100 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-orange-500 transition-all" />
-                <input required type="text" placeholder="Last Name" className="w-full bg-slate-50 border border-slate-100 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-orange-500 transition-all" />
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <input required type="text" placeholder="First Name" className="w-full bg-slate-50 border border-slate-100 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-orange-500 transition-all" />
+                <input required type="text" placeholder="Last Name" className="w-full bg-slate-50 border border-slate-100 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-orange-500 transition-all" />
               </div>
-              <input required type="email" placeholder="Corporate Email" className="w-full bg-slate-50 border border-slate-100 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-orange-500 transition-all" />
-              <div className="grid grid-cols-2 gap-4">
-                <select className="w-full bg-slate-50 border border-slate-100 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-orange-500 transition-all">
+              <input required type="email" placeholder="Corporate Email" className="w-full bg-slate-50 border border-slate-100 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-orange-500 transition-all" />
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <select className="w-full bg-slate-50 border border-slate-100 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-orange-500 transition-all">
                   <option>Air Freight</option>
                   <option>Sea Freight</option>
                   <option>Land Transport</option>
                 </select>
-                <input type="text" placeholder="Est. Weight (kg)" className="w-full bg-slate-50 border border-slate-100 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-orange-500 transition-all" />
+                <input type="text" placeholder="Est. Weight (kg)" className="w-full bg-slate-50 border border-slate-100 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-orange-500 transition-all" />
               </div>
-              <textarea placeholder="Cargo details and requirements..." rows={3} className="w-full bg-slate-50 border border-slate-100 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-orange-500 transition-all"></textarea>
+              <textarea placeholder="Cargo details and requirements..." rows={3} className="w-full bg-slate-50 border border-slate-100 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-orange-500 transition-all"></textarea>
               <button type="submit" className="w-full bg-orange-500 hover:bg-orange-600 text-white font-black py-4 rounded-xl transition-all shadow-xl shadow-orange-500/20 uppercase tracking-widest text-xs">
                 Submit Request
               </button>

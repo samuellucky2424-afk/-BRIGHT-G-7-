@@ -20,9 +20,9 @@ const AIConsultant: React.FC = () => {
   };
 
   return (
-    <div className="fixed bottom-8 right-8 z-50">
+    <div className="fixed bottom-4 right-4 md:bottom-8 md:right-8 z-50">
       {isOpen ? (
-        <div className="bg-white rounded-[2rem] shadow-2xl border border-slate-200 w-80 md:w-[24rem] flex flex-col overflow-hidden animate-in slide-in-from-bottom-8 duration-500">
+        <div className="bg-white rounded-[2rem] shadow-2xl border border-slate-200 w-[calc(100vw-2rem)] md:w-[24rem] flex flex-col overflow-hidden animate-in slide-in-from-bottom-8 duration-500">
           <div className="bg-slate-950 p-6 text-white">
             <div className="flex justify-between items-start">
               <div className="flex items-center gap-3">
